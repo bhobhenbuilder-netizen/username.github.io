@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herold Jack of All Traders - Handyman Services Cape Town</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-brown: #4A3728;
+            --secondary-brown: #5C4033;
+            --light-tan: #D2B48C;
+            --cream-bg: #F5F1E8;
+            --text-dark: #2c2c2c;
+            --text-light: #666666;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cream-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* LOGO PLACEHOLDER - Replace this div with your actual logo image */
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-brown);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .brand-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-brown);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            position: absolute;
+            top: 70px;
+            right: 2rem;
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            min-width: 180px;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-brown);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-brown);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .brand-name {
+                font-size: 0.9rem;
+            }
+
+            .logo-placeholder {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, var(--cream-bg) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(74, 55, 40, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-brown);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+
+        .hero .subheadline {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-brown);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-brown);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 55, 40, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-brown);
+            border: 2px solid var(--primary-brown);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-brown);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .subheadline {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            padding: 4rem 2rem;
+            background-color: #ffffff;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-brown);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        .service-category {
+            margin-bottom: 3rem;
+        }
+
+        .service-category h3 {
+            font-size: 1.3rem;
+            color: var(--primary-brown);
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--light-tan);
+            padding-bottom: 0.75rem;
+        }
+
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--cream-bg);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .service-table th {
+            background-color: var(--primary-brown);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .service-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e0d5c7;
+        }
+
+        .service-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .service-table tr:hover {
+            background-color: #f0e8df;
+        }
+
+        .price-cell {
+            font-weight: 600;
+            color: var(--primary-brown);
+        }
+
+        .service-description {
+            background-color: var(--cream-bg);
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-left: 4px solid var(--primary-brown);
+            margin-bottom: 2rem;
+        }
+
+        .service-description p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .service-table {
+                font-size: 0.9rem;
+            }
+
+            .service-table th,
+            .service-table td {
+                padding: 0.5rem;
+            }
+        }
+
+        /* ===== WHY CHOOSE SECTION ===== */
+        .why-choose {
+            padding: 4rem 2rem;
+            background-color: var(--cream-bg);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-brown);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h4 {
+            font-size: 1.2rem;
+            color: var(--primary-brown);
+            margin-bottom: 0.75rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .why-choose {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            padding: 4rem 2rem;
+            background-color: #ffffff;
+        }
+
+        .contact-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background-color: var(--cream-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--primary-brown);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background-color: var(--cream-bg);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-brown);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d4c4b0;
+            border-radius: 4px;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-brown);
+            box-shadow: 0 0 0 3px rgba(74, 55, 40, 0.1);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--primary-brown);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background-color: var(--secondary-brown);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .contact {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--primary-brown);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .hidden {
+            display: none;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER & NAVIGATION ===== -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <!-- LOGO PLACEHOLDER: Replace this div with your actual logo image -->
+                <div class="logo-placeholder">[INSERT LOGO HERE]</div>
+                <span class="brand-name">Herold Nkosi</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="#services">Services</a>
+                <a href="#why-choose">Why Choose Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>HEROLD NKOSI - JACK OF ALL TRADERS</h1>
+            <p class="subheadline">Labour, structures, ceilings, welding, tiling, painting, electricity – I do it all.</p>
+            <div class="hero-buttons">
+                <a href="tel:0786065935" class="btn btn-primary">📞 Call Now</a>
+                <a href="#services" class="btn btn-secondary">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services" id="services">
+        <div class="section-container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Professional handyman services across Cape Town</p>
+
+            <!-- Labour Structures with Floor -->
+            <div class="service-category">
+                <h3>Labour Structures (with floor – Chitha Hoki)</h3>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>Rooms</th>
+                            <th class="price-cell">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 Room</td>
+                            <td class="price-cell">R3,200</td>
+                        </tr>
+                        <tr>
+                            <td>2 Rooms</td>
+                            <td class="price-cell">R5,500</td>
+                        </tr>
+                        <tr>
+                            <td>3 Rooms</td>
+                            <td class="price-cell">R6,500</td>
+                        </tr>
+                        <tr>
+                            <td>4 Rooms</td>
+                            <td class="price-cell">R7,500</td>
+                        </tr>
+                        <tr>
+                            <td>5 Rooms</td>
+                            <td class="price-cell">R8,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Labour Structures without Floor -->
+            <div class="service-category">
+                <h3>Labour Structures (without floor, down light)</h3>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>Rooms</th>
+                            <th class="price-cell">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 Room</td>
+                            <td class="price-cell">R1,500</td>
+                        </tr>
+                        <tr>
+                            <td>2 Rooms</td>
+                            <td class="price-cell">R2,200</td>
+                        </tr>
+                        <tr>
+                            <td>3 Rooms</td>
+                            <td class="price-cell">R3,200</td>
+                        </tr>
+                        <tr>
+                            <td>4 Rooms</td>
+                            <td class="price-cell">R5,200</td>
+                        </tr>
+                        <tr>
+                            <td>5 Rooms</td>
+                            <td class="price-cell">R5,200</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Welding Services -->
+            <div class="service-category">
+                <h3>Welding – Burglar Doors & Windows</h3>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th class="price-cell">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cube door</td>
+                            <td class="price-cell">R2,800</td>
+                        </tr>
+                        <tr>
+                            <td>Roll Bar door</td>
+                            <td class="price-cell">R800</td>
+                        </tr>
+                        <tr>
+                            <td>Window Cube</td>
+                            <td class="price-cell">R750</td>
+                        </tr>
+                        <tr>
+                            <td>Window Roll Bar</td>
+                            <td class="price-cell">R750</td>
+                        </tr>
+                        <tr>
+                            <td>Big Window</td>
+                            <td class="price-cell">R750</td>
+                        </tr>
+                        <tr>
+                            <td>Small Window</td>
+                            <td class="price-cell">R550</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Ceilings & Roofing -->
+            <div class="service-category">
+                <h3>Ceilings & Roofing</h3>
+                
+                <h4 style="font-size: 1.05rem; color: var(--primary-brown); margin-top: 1.5rem; margin-bottom: 1rem;">Crestone Side</h4>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>3m</th>
+                            <th>4m</th>
+                            <th>5m</th>
+                            <th>6m</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="price-cell">R1,500</td>
+                            <td class="price-cell">R2,500</td>
+                            <td class="price-cell">R3,000</td>
+                            <td class="price-cell">R3,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 style="font-size: 1.05rem; color: var(--primary-brown); margin-top: 1.5rem; margin-bottom: 1rem;">Crestone Roof</h4>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>3m</th>
+                            <th>4m</th>
+                            <th>5m</th>
+                            <th>6m</th>
+                            <th>7m</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="price-cell">R1,000</td>
+                            <td class="price-cell">R1,500</td>
+                            <td class="price-cell">R1,200</td>
+                            <td class="price-cell">R1,500</td>
+                            <td class="price-cell">R2,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 style="font-size: 1.05rem; color: var(--primary-brown); margin-top: 1.5rem; margin-bottom: 1rem;">Ceiling Roof</h4>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>3m</th>
+                            <th>4m</th>
+                            <th>5m</th>
+                            <th>6m</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="price-cell">R750</td>
+                            <td class="price-cell">R850</td>
+                            <td class="price-cell">R950</td>
+                            <td class="price-cell">R1,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 style="font-size: 1.05rem; color: var(--primary-brown); margin-top: 1.5rem; margin-bottom: 1rem;">Ceiling Design</h4>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>3m</th>
+                            <th>4m</th>
+                            <th>5m</th>
+                            <th>6m</th>
+                            <th>7m</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="price-cell">R1,500</td>
+                            <td class="price-cell">R2,000</td>
+                            <td class="price-cell">R2,500</td>
+                            <td class="price-cell">R3,000</td>
+                            <td class="price-cell">R3,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 style="font-size: 1.05rem; color: var(--primary-brown); margin-top: 1.5rem; margin-bottom: 1rem;">Laminated Form</h4>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>3m</th>
+                            <th>4m</th>
+                            <th>5m</th>
+                            <th>6m</th>
+                            <th>7m</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="price-cell">R550</td>
+                            <td class="price-cell">R650</td>
+                            <td class="price-cell">R750</td>
+                            <td class="price-cell">R850</td>
+                            <td class="price-cell">R950</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Electricity -->
+            <div class="service-category">
+                <h3>Electricity</h3>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>3m</th>
+                            <th>4m</th>
+                            <th>5m</th>
+                            <th>6m</th>
+                            <th>7m</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="price-cell">R550</td>
+                            <td class="price-cell">R650</td>
+                            <td class="price-cell">R750</td>
+                            <td class="price-cell">R850</td>
+                            <td class="price-cell">R950</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Painting -->
+            <div class="service-category">
+                <h3>Painting</h3>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>3m</th>
+                            <th>4m</th>
+                            <th>5m</th>
+                            <th>6m</th>
+                            <th>7m</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="price-cell">R1,000</td>
+                            <td class="price-cell">R1,500</td>
+                            <td class="price-cell">R2,000</td>
+                            <td class="price-cell">R2,500</td>
+                            <td class="price-cell">R3,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tiling & PVC -->
+            <div class="service-category">
+                <h3>Tiling & PVC</h3>
+                <div class="service-description">
+                    <p>Professional tiling (floor/wall) and PVC ceiling installations. Contact for quote.</p>
+                </div>
+            </div>
+
+            <!-- Call-out Fees -->
+            <div class="service-category">
+                <h3>Call-out Fees by Area</h3>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>Area</th>
+                            <th class="price-cell">Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Khayelitsha</td>
+                            <td class="price-cell">R200</td>
+                        </tr>
+                        <tr>
+                            <td>Philippi</td>
+                            <td class="price-cell">R250</td>
+                        </tr>
+                        <tr>
+                            <td>Kraaifontein</td>
+                            <td class="price-cell">R300</td>
+                        </tr>
+                        <tr>
+                            <td>Houtbay</td>
+                            <td class="price-cell">R350</td>
+                        </tr>
+                        <tr>
+                            <td>Strand</td>
+                            <td class="price-cell">R350</td>
+                        </tr>
+                        <tr>
+                            <td>Stellenbosch</td>
+                            <td class="price-cell">R350</td>
+                        </tr>
+                        <tr>
+                            <td>Cape Town</td>
+                            <td class="price-cell">R350</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY CHOOSE SECTION ===== -->
+    <section class="why-choose" id="why-choose">
+        <div class="section-container">
+            <h2 class="section-title">Why Choose Herold?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🛠️</div>
+                    <h4>All-in-One</h4>
+                    <p>Handles everything from labour structures and welding to painting and electricity. One call for all your needs.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📍</div>
+                    <h4>We Come to You</h4>
+                    <p>Serves all listed areas across Cape Town and surrounding regions. Flexible scheduling to suit your needs.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💬</div>
+                    <h4>Friendly & Reliable</h4>
+                    <p>Clear pricing, on-time service, and professional workmanship. Free quotes available for all projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Ready to get your project done?</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <a href="tel:0786065935">078 606 5935</a>
+                </div>
+                <div class="contact-item">
+                    <strong>WhatsApp</strong>
+                    <a href="https://wa.me/27786065935">WhatsApp: 078 606 5935</a>
+                </div>
+                <div class="contact-item">
+                    <strong>TikTok</strong>
+                    <a href="https://tiktok.com/@HEROLDNKOSI">@HEROLDNKOSI</a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary-brown);">Send us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2025 Herold Nkosi - Jack of All Traders.</p>
+        <p>Proudly serving Cape Town and surrounding areas. Free quotes!</p>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Contact form handler
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form ready. Connect to Formspree to activate.');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
